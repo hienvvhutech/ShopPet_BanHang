@@ -3,7 +3,8 @@ const app = require('./app');
 const mongoose = require('mongoose');
 
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/shoppet";
+const rawMongoUri = process.env.MONGO_URI || "mongodb://localhost:27017/shoppet";
+const MONGO_URI = rawMongoUri.replace(/\/shoppingpet(?=\?|$)/, '/shoppet');
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI)

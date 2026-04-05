@@ -1,5 +1,5 @@
 // ==================== API CONFIG ====================
-const API_URL = 'http://127.0.0.1:5000/api';
+const API_URL = `${window.location.protocol}//${window.location.hostname}:5000/api`;
 
 // ==================== HELPER FUNCTIONS ====================
 function formatPrice(price) {

@@ -3,13 +3,7 @@
 
 const express = require('express');
 const cors = require('cors');
-const categoryRoutes = require('./routes/categoryRoutes');
-const productRoutes = require('./routes/productRoutes');
-const cartRoutes = require('./routes/cartRoutes');
-const orderRoutes = require('./routes/orderRoutes');
 
-const authRoutes = require('./routes/authRoutes');
-const adminRoutes = require('./routes/adminRoutes');
 
 
 const app = express();
@@ -21,12 +15,12 @@ app.use(express.json());
 // Routes
 
 
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/products', require('./routes/productRoutes'));
-app.use('/api/categories', require('./routes/categoryRoutes'));
-app.use('/api/cart', require('./routes/cartRoutes'));
-app.use('/api/orders', require('./routes/orderRoutes'));
-app.use('/api/admin', require('./routes/adminRoutes'));
+app.use('/api/auth', require('./src/routes/authRoutes'));
+app.use('/api/products', require('./src/routes/productRoutes'));
+app.use('/api/categories', require('./src/routes/categoryRoutes'));
+app.use('/api/cart', require('./src/routes/cartRoutes'));
+app.use('/api/orders', require('./src/routes/orderRoutes'));
+app.use('/api/admin', require('./src/routes/adminRoutes'));
 // Error Handling
 
 

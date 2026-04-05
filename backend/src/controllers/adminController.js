@@ -1,6 +1,6 @@
-const Order = require('../src/models/Order');
-const User = require('../src/models/User');
-const Product = require('../src/models/Product');
+const Order = require('../models/Order');
+const User = require('../models/User');
+const Product = require('../models/Product');
 
 // @desc    Get dashboard stats
 // @route   GET /api/admin/dashboard

@@ -1,4 +1,4 @@
-const Category = require('../src/models/Category');
+const Category = require('../models/Category');
 
 // @desc    Get all categories
 // @route   GET /api/categories

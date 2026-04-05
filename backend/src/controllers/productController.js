@@ -1,5 +1,5 @@
-const Product = require('../src/models/Product');
-const Category = require('../src/models/Category');
+const Product = require('../models/Product');
+const Category = require('../models/Category');
 
 // @desc    Get all categories
 // @route   GET /api/products/categories

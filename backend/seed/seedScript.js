@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
+const bcrypt = require('bcryptjs');
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const User = require('../src/models/User');
@@ -24,11 +25,12 @@ const seedDB = async () => {
         await Review.deleteMany({});
 
         // Seed Users
+        const seededPassword = await bcrypt.hash('admin123456', 10);
         const users = await User.insertMany([
-            { full_name: 'Quản trị viên', email: 'admin@shoppet.vn', password: '$2b$10$OaklZKgmmtNAiYnjgj/Z6.3deQ59Vcyqi4VPn.Wm0NuxFutZvxYea', role: 'admin', phone: '0999888777', address: 'Hệ thống ShopPet' },
-            { full_name: 'Admin Admin', email: 'admin@petshop.com', password: '$2b$10$OaklZKgmmtNAiYnjgj/Z6.3deQ59Vcyqi4VPn.Wm0NuxFutZvxYea', role: 'admin', phone: '0123456789', address: 'Main Street Pet Shop HQ' },
-            { full_name: 'Customer One', email: 'customer1@example.com', password: '$2b$10$OaklZKgmmtNAiYnjgj/Z6.3deQ59Vcyqi4VPn.Wm0NuxFutZvxYea', role: 'customer', phone: '0987654321', address: '123 Customer Ave, New York, NY' },
-            { full_name: 'Customer Two', email: 'customer2@example.com', password: '$2b$10$OaklZKgmmtNAiYnjgj/Z6.3deQ59Vcyqi4VPn.Wm0NuxFutZvxYea', role: 'customer', phone: '0555123456', address: '456 Buyer Blvd, Los Angeles, CA' }
+            { full_name: 'Quản trị viên', email: 'admin@shoppet.vn', password: seededPassword, role: 'admin', phone: '0999888777', address: 'Hệ thống ShopPet' },
+            { full_name: 'Admin Admin', email: 'admin@petshop.com', password: seededPassword, role: 'admin', phone: '0123456789', address: 'Main Street Pet Shop HQ' },
+            { full_name: 'Customer One', email: 'customer1@example.com', password: seededPassword, role: 'customer', phone: '0987654321', address: '123 Customer Ave, New York, NY' },
+            { full_name: 'Customer Two', email: 'customer2@example.com', password: seededPassword, role: 'customer', phone: '0555123456', address: '456 Buyer Blvd, Los Angeles, CA' }
         ]);
         console.log('Users seeded');
 

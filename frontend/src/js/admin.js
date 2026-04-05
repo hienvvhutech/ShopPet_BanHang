@@ -1,6 +1,7 @@
-const ADMIN_API_URL = 'http://127.0.0.1:5000/api/admin';
-const PROD_API_URL = 'http://127.0.0.1:5000/api/products';
-const CAT_API_URL = 'http://127.0.0.1:5000/api/categories';
+const API_BASE_URL = `${window.location.protocol}//${window.location.hostname}:5000/api`;
+const ADMIN_API_URL = `${API_BASE_URL}/admin`;
+const PROD_API_URL = `${API_BASE_URL}/products`;
+const CAT_API_URL = `${API_BASE_URL}/categories`;
 
 // ==================== SECURITY CHECK ====================
 function checkAdminAuth() {

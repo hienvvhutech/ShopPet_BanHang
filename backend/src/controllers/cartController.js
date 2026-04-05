@@ -1,6 +1,6 @@
 
-const Cart = require('../src/models/Cart');
-const Product = require('../src/models/Product');
+const Cart = require('../models/Cart');
+const Product = require('../models/Product');
 
 
 // @desc    Get current user's cart

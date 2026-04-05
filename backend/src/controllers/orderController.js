@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const Order = require('../src/models/Order');
-const OrderDetail = require('../src/models/OrderDetail');
-const Cart = require('../src/models/Cart');
-const Product = require('../src/models/Product');
+const Order = require('../models/Order');
+const OrderDetail = require('../models/OrderDetail');
+const Cart = require('../models/Cart');
+const Product = require('../models/Product');
 
 // @desc    Create new order
 // @route   POST /api/orders
